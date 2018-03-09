@@ -1,0 +1,135 @@
+#include "stdafx.h"
+#include <iostream>
+#include <locale.h>
+#include <stdio.h>
+
+void numbers()
+{
+	setlocale(LC_ALL, "Russian");
+
+	printf("Введите первое число ");
+
+	int a;
+
+	scanf_s("%d", &a);
+
+	printf("Введите второе чило ");
+
+	int b;
+
+	scanf_s("%d", &b);
+
+	printf("Введите третье чило ");
+
+	int c;
+
+	scanf_s("%d", &c);
+
+	if (a == b) {
+		if (a == c) {
+			printf("Все числа равны ");
+
+		}
+		else {
+			printf("Первое равно второму ");
+		}
+	}
+	else {
+		if (a == c) {
+			printf("Первое равно третьему");
+
+		}
+		else if (b == c) {
+			printf("Первое равно третьему");
+		}
+		else {
+			printf("Числа не равны друг другу");
+		}
+	}
+
+	system("pause");
+	
+}
+
+void triange()
+{
+	setlocale(LC_ALL, "Russian");
+	printf("Введите величины сторон треугольника ");
+	int a, b, c;
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	scanf_s("%d", &c);
+	if ((a + b > c) && (a + c > b) && (b + c > a)) printf("треугольник существует ");
+	else printf("не существует ");
+
+	system("pause");
+	
+
+}
+
+void solveit()
+
+{
+	setlocale(LC_ALL, "Russian");
+
+	printf("Введите коэффициенты уравнения: ");
+
+	float a, b, c;
+
+	scanf_s("%f", &a);
+	scanf_s("%f", &b);
+	scanf_s("%f", &c);
+
+	float D, xa, xb;
+
+
+	D = b*b - 4 * a*c;
+
+	if (D >= 0) {
+
+		xa = (-b + sqrt(D)) / (2 * a);
+		printf("x1= %f ", xa);
+		xb = (-b - sqrt(D)) / (2 * a);
+		printf("x2= %f ", xb);
+	}
+
+	else printf("нет корней ");
+
+	system("pause");
+	
+}
+
+
+
+
+
+
+
+int main()
+{
+	int errors = 0;
+	int in_the_end = 0;
+
+	setlocale(LC_ALL, "russian");
+
+	while (true) {
+
+		int variants;
+		printf("Выберите номер задания: \n1. Задание 1 (числа) \n2. Задание 2 (треугольник) \n3. Задание 3 (уравнение) \n4.Выход");
+		scanf_s("%d", &variants);
+
+		switch (variants) 
+		
+		{
+		case 1: numbers(); break;
+		case 2: triange(); break;
+		case 3: solveit(); break;
+		case 4: printf("Выход\n"); in_the_end = 1; break;
+
+		}
+
+		if (in_the_end == 1){ break; }
+	}
+
+	return 0;
+}
