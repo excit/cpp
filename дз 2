@@ -107,7 +107,6 @@ void solveit()
 
 int main()
 {
-	int errors = 0;
 	int in_the_end = 0;
 
 	setlocale(LC_ALL, "russian");
